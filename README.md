@@ -24,20 +24,25 @@ change this to point to your conf file.
 
 Next, edit your conf file. The first section is RPC parameters for your properly configured bitcoind/bitcoin-qt equivalent. My bot is setup to use quarkcoin-qt.
 
-Change the basedir parameter in the next section, everything else can probably stay the same
+Change the <b>basedir</b> parameter in the next section, everything else can probably stay the same
 
-payoutMedianTime: Unmodified amount of time between payouts, in seconds
-payoutMaxTimeFlux: Maximum number of seconds that payout time can fluctuate from payoutMedianTime, up or down.
-payoutMedianOdds: Chances of a particular user getting paid out on a given round of payouts. 0.00 - 1.00
-payoutMaxOddsFlux: Maximum amount that MedianOdds will fluctuate up or down
-timeForConsideration: Time in seconds during which you can be considered for a payout after you stop chatting
+<b>payoutMedianTime</b>: Unmodified amount of time between payouts, in seconds
 
-payoutDelay: Delay in seconds between picking recipients and actually sending payouts. Set to a high number to audit payouts, but make sure it's smaller than (payoutMedianTime - payoutMaxTimeFlux)
-minbalance: If your wallet drops below this balance, no further payouts will be sent
+<b>payoutMaxTimeFlux</b>: Maximum number of seconds that payout time can fluctuate from payoutMedianTime, up or down.
 
-EDIT balancetext - CHANGE THE ADDRESS - otherwise people will be sending me QRK that's meant for you
+<b>payoutMedianOdds</b>: Chances of a particular user getting paid out on a given round of payouts. 0.00 - 1.00
 
-FINALLY, edit faucetOdds.py - this sets up the min/max payouts and the odds of each
+<b>payoutMaxOddsFlux</b>: Maximum amount that MedianOdds will fluctuate up or down
+
+<b>timeForConsideration</b>: Time in seconds during which you can be considered for a payout after you stop chatting
+
+<b>payoutDelay</b>: Delay in seconds between picking recipients and actually sending payouts. Set to a high number to audit payouts, but make sure it's smaller than (payoutMedianTime - payoutMaxTimeFlux)
+
+<b>minbalance</b>: If your wallet drops below this balance, no further payouts will be sent
+
+EDIT <b>balancetext</b> - CHANGE THE ADDRESS - otherwise people will be sending me QRK that's meant for you
+
+FINALLY, edit <b>faucetOdds.py</b> - this sets up the min/max payouts and the odds of each
 
 payoutList = [1] * 5 + [0.5] * 20 + [.25] * 75
 
